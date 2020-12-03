@@ -12,14 +12,9 @@ namespace FractalsApp
 
         public Color EndColor { get; set; } = Color.Black;
 
-        public Color[] Colors { get; set; } = new Color[]
-        {
-            Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
-            Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
-            Color.Black, Color.Black, Color.Black
-        };
+        public Color[] Colors { get; set; }
 
-        public Control Canvas { get; set; }
+        //public Control Canvas { get; set; }
 
         public Graphics Graphics { get; set; }
 
@@ -28,6 +23,8 @@ namespace FractalsApp
         public abstract int Width { get; }
 
         public abstract int Height { get; }
+
+        public abstract float BaseLengthRatio { get; }
 
         public float BaseLength 
         { 

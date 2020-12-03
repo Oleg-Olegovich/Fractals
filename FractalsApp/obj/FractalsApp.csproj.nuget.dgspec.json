@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oleko\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj": {}
+    "D:\\Documents\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oleko\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj": {
+    "D:\\Documents\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oleko\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj",
+        "projectUniqueName": "D:\\Documents\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj",
         "projectName": "FractalsApp",
-        "projectPath": "C:\\Users\\oleko\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj",
-        "packagesPath": "C:\\Users\\oleko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oleko\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\obj\\",
+        "projectPath": "D:\\Documents\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\FractalsApp.csproj",
+        "packagesPath": "C:\\Users\\Oleg_Olegovich\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\YandexDisk\\Programs\\C#\\Fractals\\FractalsApp\\FractalsApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\oleko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Oleg_Olegovich\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

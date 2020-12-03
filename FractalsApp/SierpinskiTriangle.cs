@@ -7,55 +7,58 @@ namespace FractalsApp
 {
     class SierpinskiTriangle : Fractal
     {
+        public override float BaseLengthRatio => 2;
+
         public override int Width
-            => Math.Min((int)(Iterations * BaseLength) + 1, 3000);
+            => Math.Min((int)BaseLength + 1, 3000);
 
         public override int Height
-            => Math.Min((int)(Iterations * BaseLength) + 1, 3000);
+            => Math.Min((int)(1.5 * BaseLength) + 1, 3000);
 
         public override void Draw()
         {
-            var topPoint = new PointF(0, Height - Height / 20);
-            var leftPoint = new PointF(Width, Height - Height / 20);
-            var rightPoint = new PointF(Width / 2, Height * 2);
-            DrawLayer(Iterations, topPoint, leftPoint, rightPoint);
+            var topPoint = new PointF(BaseLength / 2, 5);
+            var leftPoint = new PointF(0, 
+                (float)(BaseLength * Math.Sqrt(3) / 2 + 5));
+            var rightPoint = new PointF(BaseLength, 
+                (float)(BaseLength * Math.Sqrt(3) / 2 + 5));
+            DrawLayer(Iterations, topPoint, leftPoint, rightPoint, 0);
         }
 
         // Draw a triangle between the points.
         private void DrawLayer(int iteration, PointF topPoint, 
-            PointF leftPoint, PointF rightPoint)
+            PointF leftPoint, PointF rightPoint, int colorIndex)
         {
             // See if we should stop.
-            if (iteration == 0)
+            if (iteration == 1)
             {
                 // Fill the triangle.
                 PointF[] points =
                 {
                     topPoint, rightPoint, leftPoint
                 };
-                using var brush = new SolidBrush(Colors[iteration]);
-                Graphics.FillPolygon(brush, points);
+                Graphics.DrawPolygon(new Pen(Colors[colorIndex], 2), 
+                    points);
             }
             else
             {
                 // Find the edge midpoints.
-                PointF left_mid = new PointF(
+                PointF leftMiddle = new PointF(
                     (topPoint.X + leftPoint.X) / 2f,
                     (topPoint.Y + leftPoint.Y) / 2f);
-                PointF right_mid = new PointF(
+                PointF rightMiddle = new PointF(
                     (topPoint.X + rightPoint.X) / 2f,
                     (topPoint.Y + rightPoint.Y) / 2f);
-                PointF bottom_mid = new PointF(
+                PointF bottomMiddle = new PointF(
                     (leftPoint.X + rightPoint.X) / 2f,
                     (leftPoint.Y + rightPoint.Y) / 2f);
-
                 // Recursively draw smaller triangles.
                 DrawLayer(iteration - 1, topPoint, 
-                    left_mid, right_mid);
-                DrawLayer(iteration - 1, left_mid, 
-                    leftPoint, bottom_mid);
-                DrawLayer(iteration - 1, right_mid, 
-                    bottom_mid, rightPoint);
+                    leftMiddle, rightMiddle, colorIndex);
+                DrawLayer(iteration - 1, leftMiddle, 
+                    leftPoint, bottomMiddle, colorIndex + 1);
+                DrawLayer(iteration - 1, rightMiddle, 
+                    bottomMiddle, rightPoint, colorIndex + 2);
             }
         }
     }

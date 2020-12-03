@@ -7,46 +7,66 @@ namespace FractalsApp
 {
     class KochCurve : Fractal
     {
+        private float FractalWidth
+            => Math.Min(Iterations * BaseLength, 3000);
+
+        private float FractalHeight
+            => Math.Min(Iterations * BaseLength, 3000);
+
+        public Color BackColor { get; set; } = Color.Gray;
+
+        public override float BaseLengthRatio => 2;
+
         public override int Width
-            => Math.Min((int)(Iterations * BaseLength) + 1, 3000);
+            => Math.Min((int)FractalWidth + 1, 3000);
 
         public override int Height
-            => Math.Min((int)(Iterations * BaseLength) + 1, 3000);
+            => Math.Min((int)(FractalHeight - FractalHeight / (float)1.7) + 1, 3000);
 
         public override void Draw()
         {
-            Color deleteColor = Color.White;
-            var pen1 = new Pen(Colors[0], 2);
-            var pen2 = new Pen(deleteColor, 2);
+            var pen = new Pen(Colors[0], 2);
+            var eraser = new Pen(BackColor, 2);
             //Определим координаты исходного треугольника
-            var point1 = new PointF(0, Height - Height / 20);
-            var point2 = new PointF(Width, Height - Height / 20);
-            var point3 = new PointF(Width / 2, Height * 2);
-            Graphics.DrawLine(pen1, point1, point2);
-            DrawLayer(point1, point2, point3, pen1, pen2, Iterations);
+            var leftPoint = new PointF(0, FractalHeight - FractalHeight / 20);
+            var rightPoint = new PointF(FractalWidth, FractalHeight - FractalHeight / 20);
+            var topPoint = new PointF(FractalWidth / 2, 2 * FractalHeight);
+            DrawSegment(pen, leftPoint, rightPoint);
+            DrawLayer(leftPoint, rightPoint, topPoint, pen, eraser, Iterations);
         }
 
-        public void DrawLayer(PointF p1, PointF p2, PointF p3, 
-            Pen pen1, Pen deletePen, int iteration)
+        public void DrawLayer(PointF leftPoint, PointF rightPoint, PointF topPoint, 
+            Pen pen, Pen eraser, int iteration)
         {
-            if (iteration == 0)
+            if (iteration == 1)
             {
                 return;
             }
-            pen1.Color = Colors[iteration];
-            var p4 = new PointF((p2.X + 2 * p1.X) / 3, (p2.Y + 2 * p1.Y) / 3);
-            var p5 = new PointF((2 * p2.X + p1.X) / 3, (p1.Y + 2 * p2.Y) / 3);
-            var ps = new PointF((p2.X + p1.X) / 2, (p2.Y + p1.Y) / 2);
-            var pn = new PointF((4 * ps.X - p3.X) / 3, (4 * ps.Y - p3.Y) / 3);
-            Graphics.DrawLine(pen1, p4, pn);
-            Graphics.DrawLine(pen1, p5, pn);
-            Graphics.DrawLine(deletePen, p4, p5);
-            DrawLayer(p4, pn, p5, pen1, deletePen, iteration - 1);
-            DrawLayer(pn, p5, p4, pen1, deletePen, iteration - 1);
-            DrawLayer(p1, p4, new PointF((2 * p1.X + p3.X) / 3, (2 * p1.Y + p3.Y) / 3), 
-                pen1, deletePen, iteration - 1);
-            DrawLayer(p5, p2, new PointF((2 * p2.X + p3.X) / 3, (2 * p2.Y + p3.Y) / 3), 
-                pen1, deletePen, iteration - 1);
+            pen.Color = Colors[Iterations - iteration + 1];
+            var point1 = new PointF((rightPoint.X + 2 * leftPoint.X) / 3, 
+                (rightPoint.Y + 2 * leftPoint.Y) / 3);
+            var point2 = new PointF((2 * rightPoint.X + leftPoint.X) / 3, 
+                (leftPoint.Y + 2 * rightPoint.Y) / 3);
+            var auxiliaryPoint = new PointF((rightPoint.X + leftPoint.X) / 2, 
+                (rightPoint.Y + leftPoint.Y) / 2);
+            var point3 = new PointF((4 * auxiliaryPoint.X - topPoint.X) / 3, 
+                (4 * auxiliaryPoint.Y - topPoint.Y) / 3);
+            DrawSegment(pen, point1, point3);
+            DrawSegment(pen, point2, point3);
+            DrawSegment(eraser, point1, point2);
+            DrawLayer(point1, point3, point2, pen, eraser, iteration - 1);
+            DrawLayer(point3, point2, point1, pen, eraser, iteration - 1);
+            DrawLayer(leftPoint, point1, new PointF((2 * leftPoint.X + topPoint.X) / 3, 
+                (2 * leftPoint.Y + topPoint.Y) / 3), pen, eraser, iteration - 1);
+            DrawLayer(point2, rightPoint, new PointF((2 * rightPoint.X + topPoint.X) / 3, 
+                (2 * rightPoint.Y + topPoint.Y) / 3), pen, eraser, iteration - 1);
+        }
+
+        private void DrawSegment(Pen pen, PointF first, PointF second)
+        {
+            float heightDelta = FractalHeight / (float)1.7;
+            Graphics.DrawLine(pen, new PointF(first.X, first.Y - heightDelta),
+                new PointF(second.X, second.Y - heightDelta));
         }
     }
 }
