@@ -109,10 +109,10 @@
             this.labelWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelWelcome.Location = new System.Drawing.Point(206, 0);
+            this.labelWelcome.Location = new System.Drawing.Point(127, 0);
             this.labelWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(338, 96);
+            this.labelWelcome.Size = new System.Drawing.Size(497, 96);
             this.labelWelcome.TabIndex = 0;
             this.labelWelcome.Text = "Welcome to the fractal auto generator!";
             this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -188,7 +188,7 @@
             this.labelDescription.Location = new System.Drawing.Point(2, 0);
             this.labelDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(302, 25);
+            this.labelDescription.Size = new System.Drawing.Size(302, 40);
             this.labelDescription.TabIndex = 0;
             this.labelDescription.Text = "Generation of a fractal";
             this.labelDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,7 +242,7 @@
             this.labelTypesOfFractals.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTypesOfFractals.Location = new System.Drawing.Point(3, 3);
             this.labelTypesOfFractals.Name = "labelTypesOfFractals";
-            this.labelTypesOfFractals.Size = new System.Drawing.Size(137, 15);
+            this.labelTypesOfFractals.Size = new System.Drawing.Size(207, 25);
             this.labelTypesOfFractals.TabIndex = 7;
             this.labelTypesOfFractals.Text = "Select the type of fractal.";
             // 
@@ -257,10 +257,10 @@
             "Sierpinski Carpet",
             "Sierpinski Triangle",
             "Cantor Set"});
-            this.comboBoxTypesOfFractals.Location = new System.Drawing.Point(2, 22);
+            this.comboBoxTypesOfFractals.Location = new System.Drawing.Point(6, 28);
             this.comboBoxTypesOfFractals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTypesOfFractals.Name = "comboBoxTypesOfFractals";
-            this.comboBoxTypesOfFractals.Size = new System.Drawing.Size(167, 23);
+            this.comboBoxTypesOfFractals.Size = new System.Drawing.Size(167, 33);
             this.comboBoxTypesOfFractals.TabIndex = 0;
             this.comboBoxTypesOfFractals.Text = "Wind-blown fractal tree";
             this.comboBoxTypesOfFractals.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTypesOfFractalsSelectedIndexChanged);
@@ -268,19 +268,19 @@
             // labelFirstColor
             // 
             this.labelFirstColor.AutoSize = true;
-            this.labelFirstColor.Location = new System.Drawing.Point(0, 56);
+            this.labelFirstColor.Location = new System.Drawing.Point(2, 61);
             this.labelFirstColor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFirstColor.Name = "labelFirstColor";
-            this.labelFirstColor.Size = new System.Drawing.Size(59, 15);
+            this.labelFirstColor.Size = new System.Drawing.Size(90, 25);
             this.labelFirstColor.TabIndex = 1;
             this.labelFirstColor.Text = "First color";
             // 
             // textBoxFirstColor
             // 
-            this.textBoxFirstColor.Location = new System.Drawing.Point(2, 84);
+            this.textBoxFirstColor.Location = new System.Drawing.Point(4, 87);
             this.textBoxFirstColor.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFirstColor.Name = "textBoxFirstColor";
-            this.textBoxFirstColor.Size = new System.Drawing.Size(167, 23);
+            this.textBoxFirstColor.Size = new System.Drawing.Size(167, 31);
             this.textBoxFirstColor.TabIndex = 2;
             this.textBoxFirstColor.Text = "#000000";
             this.textBoxFirstColor.Click += new System.EventHandler(this.TextBoxFirstColorClick);
@@ -292,16 +292,16 @@
             this.labelLastColor.Location = new System.Drawing.Point(3, 117);
             this.labelLastColor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLastColor.Name = "labelLastColor";
-            this.labelLastColor.Size = new System.Drawing.Size(58, 15);
+            this.labelLastColor.Size = new System.Drawing.Size(88, 25);
             this.labelLastColor.TabIndex = 3;
             this.labelLastColor.Text = "Last color";
             // 
             // textBoxLastColor
             // 
-            this.textBoxLastColor.Location = new System.Drawing.Point(2, 144);
+            this.textBoxLastColor.Location = new System.Drawing.Point(4, 144);
             this.textBoxLastColor.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastColor.Name = "textBoxLastColor";
-            this.textBoxLastColor.Size = new System.Drawing.Size(167, 23);
+            this.textBoxLastColor.Size = new System.Drawing.Size(167, 31);
             this.textBoxLastColor.TabIndex = 4;
             this.textBoxLastColor.Text = "#FFFFFF";
             this.textBoxLastColor.Click += new System.EventHandler(this.TextBoxLastColorClick);
@@ -313,7 +313,7 @@
             this.labelDepth.Location = new System.Drawing.Point(2, 177);
             this.labelDepth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDepth.Name = "labelDepth";
-            this.labelDepth.Size = new System.Drawing.Size(93, 15);
+            this.labelDepth.Size = new System.Drawing.Size(140, 25);
             this.labelDepth.TabIndex = 5;
             this.labelDepth.Text = "Recursion depth";
             // 
@@ -323,7 +323,7 @@
             this.trackBarDepth.Margin = new System.Windows.Forms.Padding(2);
             this.trackBarDepth.Minimum = 1;
             this.trackBarDepth.Name = "trackBarDepth";
-            this.trackBarDepth.Size = new System.Drawing.Size(255, 45);
+            this.trackBarDepth.Size = new System.Drawing.Size(255, 69);
             this.trackBarDepth.TabIndex = 6;
             this.trackBarDepth.Value = 1;
             this.trackBarDepth.Scroll += new System.EventHandler(this.TrackBarDepthScroll);
@@ -333,7 +333,7 @@
             this.labelScale.AutoSize = true;
             this.labelScale.Location = new System.Drawing.Point(3, 275);
             this.labelScale.Name = "labelScale";
-            this.labelScale.Size = new System.Drawing.Size(34, 15);
+            this.labelScale.Size = new System.Drawing.Size(52, 25);
             this.labelScale.TabIndex = 8;
             this.labelScale.Text = "Scale";
             // 
@@ -344,7 +344,7 @@
             this.trackBarScale.Maximum = 6;
             this.trackBarScale.Minimum = 1;
             this.trackBarScale.Name = "trackBarScale";
-            this.trackBarScale.Size = new System.Drawing.Size(255, 45);
+            this.trackBarScale.Size = new System.Drawing.Size(255, 69);
             this.trackBarScale.TabIndex = 6;
             this.trackBarScale.Value = 1;
             this.trackBarScale.Scroll += new System.EventHandler(this.TrackBarScaleScroll);
@@ -406,16 +406,16 @@
             this.labelFirstAngleDelta.AutoSize = true;
             this.labelFirstAngleDelta.Location = new System.Drawing.Point(3, 0);
             this.labelFirstAngleDelta.Name = "labelFirstAngleDelta";
-            this.labelFirstAngleDelta.Size = new System.Drawing.Size(64, 30);
+            this.labelFirstAngleDelta.Size = new System.Drawing.Size(60, 50);
             this.labelFirstAngleDelta.TabIndex = 10;
             this.labelFirstAngleDelta.Text = "First angle delta";
             // 
             // textBoxFirstAngleDelta
             // 
             this.textBoxFirstAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFirstAngleDelta.Location = new System.Drawing.Point(3, 63);
+            this.textBoxFirstAngleDelta.Location = new System.Drawing.Point(3, 59);
             this.textBoxFirstAngleDelta.Name = "textBoxFirstAngleDelta";
-            this.textBoxFirstAngleDelta.Size = new System.Drawing.Size(78, 23);
+            this.textBoxFirstAngleDelta.Size = new System.Drawing.Size(78, 31);
             this.textBoxFirstAngleDelta.TabIndex = 11;
             this.textBoxFirstAngleDelta.TextChanged += new System.EventHandler(this.TextBoxFirstAngleDeltaTextChanged);
             // 
@@ -424,7 +424,7 @@
             this.labelLengthRatio.AutoSize = true;
             this.labelLengthRatio.Location = new System.Drawing.Point(171, 0);
             this.labelLengthRatio.Name = "labelLengthRatio";
-            this.labelLengthRatio.Size = new System.Drawing.Size(51, 30);
+            this.labelLengthRatio.Size = new System.Drawing.Size(75, 50);
             this.labelLengthRatio.TabIndex = 13;
             this.labelLengthRatio.Text = "Ratio of length";
             // 
@@ -432,18 +432,18 @@
             // 
             this.textBoxSecondAngleDelta.AcceptsTab = true;
             this.textBoxSecondAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSecondAngleDelta.Location = new System.Drawing.Point(87, 63);
+            this.textBoxSecondAngleDelta.Location = new System.Drawing.Point(87, 59);
             this.textBoxSecondAngleDelta.Name = "textBoxSecondAngleDelta";
-            this.textBoxSecondAngleDelta.Size = new System.Drawing.Size(78, 23);
+            this.textBoxSecondAngleDelta.Size = new System.Drawing.Size(78, 31);
             this.textBoxSecondAngleDelta.TabIndex = 14;
             this.textBoxSecondAngleDelta.TextChanged += new System.EventHandler(this.TextBoxSecondAngleDeltaTextChanged);
             // 
             // textBoxLengthRatio
             // 
             this.textBoxLengthRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLengthRatio.Location = new System.Drawing.Point(171, 63);
+            this.textBoxLengthRatio.Location = new System.Drawing.Point(171, 59);
             this.textBoxLengthRatio.Name = "textBoxLengthRatio";
-            this.textBoxLengthRatio.Size = new System.Drawing.Size(79, 23);
+            this.textBoxLengthRatio.Size = new System.Drawing.Size(79, 31);
             this.textBoxLengthRatio.TabIndex = 15;
             this.textBoxLengthRatio.TextChanged += new System.EventHandler(this.TextBoxLengthRatioTextChanged);
             // 
@@ -452,7 +452,7 @@
             this.labelSecondAngleDelta.AutoSize = true;
             this.labelSecondAngleDelta.Location = new System.Drawing.Point(87, 0);
             this.labelSecondAngleDelta.Name = "labelSecondAngleDelta";
-            this.labelSecondAngleDelta.Size = new System.Drawing.Size(78, 30);
+            this.labelSecondAngleDelta.Size = new System.Drawing.Size(76, 50);
             this.labelSecondAngleDelta.TabIndex = 12;
             this.labelSecondAngleDelta.Text = "Second angle delta";
             // 
@@ -465,14 +465,14 @@
             this.panelOfCantorSetSettings.Controls.Add(this.labelIterationDistance);
             this.panelOfCantorSetSettings.Location = new System.Drawing.Point(5, 372);
             this.panelOfCantorSetSettings.Name = "panelOfCantorSetSettings";
-            this.panelOfCantorSetSettings.Size = new System.Drawing.Size(251, 103);
+            this.panelOfCantorSetSettings.Size = new System.Drawing.Size(251, 107);
             this.panelOfCantorSetSettings.TabIndex = 14;
             // 
             // textBoxLayerHeight
             // 
             this.textBoxLayerHeight.Location = new System.Drawing.Point(15, 73);
             this.textBoxLayerHeight.Name = "textBoxLayerHeight";
-            this.textBoxLayerHeight.Size = new System.Drawing.Size(149, 23);
+            this.textBoxLayerHeight.Size = new System.Drawing.Size(149, 31);
             this.textBoxLayerHeight.TabIndex = 1;
             this.textBoxLayerHeight.Text = "10";
             this.textBoxLayerHeight.TextChanged += new System.EventHandler(this.TextBoxLayerHeightTextChanged);
@@ -482,7 +482,7 @@
             this.labelLayerHeight.AutoSize = true;
             this.labelLayerHeight.Location = new System.Drawing.Point(12, 55);
             this.labelLayerHeight.Name = "labelLayerHeight";
-            this.labelLayerHeight.Size = new System.Drawing.Size(72, 15);
+            this.labelLayerHeight.Size = new System.Drawing.Size(108, 25);
             this.labelLayerHeight.TabIndex = 0;
             this.labelLayerHeight.Text = "Layer height";
             // 
@@ -490,7 +490,7 @@
             // 
             this.textBoxIterationDistance.Location = new System.Drawing.Point(14, 26);
             this.textBoxIterationDistance.Name = "textBoxIterationDistance";
-            this.textBoxIterationDistance.Size = new System.Drawing.Size(149, 23);
+            this.textBoxIterationDistance.Size = new System.Drawing.Size(149, 31);
             this.textBoxIterationDistance.TabIndex = 1;
             this.textBoxIterationDistance.Text = "10";
             this.textBoxIterationDistance.TextChanged += new System.EventHandler(this.TextBoxIterationDistanceTextChanged);
@@ -500,7 +500,7 @@
             this.labelIterationDistance.AutoSize = true;
             this.labelIterationDistance.Location = new System.Drawing.Point(12, 5);
             this.labelIterationDistance.Name = "labelIterationDistance";
-            this.labelIterationDistance.Size = new System.Drawing.Size(152, 15);
+            this.labelIterationDistance.Size = new System.Drawing.Size(229, 25);
             this.labelIterationDistance.TabIndex = 0;
             this.labelIterationDistance.Text = "Distance between iterations";
             // 
@@ -528,8 +528,8 @@
             // FormMain
             // 
             this.ClientSize = new System.Drawing.Size(751, 644);
-            this.Controls.Add(this.tableLayoutPanelOfMainMenu);
             this.Controls.Add(this.tableLayoutPanelOfGeneration);
+            this.Controls.Add(this.tableLayoutPanelOfMainMenu);
             this.MinimumSize = new System.Drawing.Size(600, 410);
             this.Name = "FormMain";
             this.Resize += new System.EventHandler(this.FormMainMenuResize);

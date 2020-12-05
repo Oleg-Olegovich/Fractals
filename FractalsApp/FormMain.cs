@@ -442,7 +442,14 @@ namespace FractalsApp
             {
                 return;
             }
-            textBoxFirstColor.Text = ColorTranslator.ToHtml(colorDialog.Color);
+            try
+            {
+                textBoxLastColor.Text = ColorTranslator.ToHtml(colorDialog.Color);
+            }
+            catch
+            {
+                MessageBox.Show("Failed to convert the first color to hex.");
+            }
         }
 
         /// <summary>
@@ -454,7 +461,14 @@ namespace FractalsApp
             {
                 return;
             }
-            textBoxLastColor.Text = ColorTranslator.ToHtml(colorDialog.Color);
+            try
+            {
+                textBoxLastColor.Text = ColorTranslator.ToHtml(colorDialog.Color);
+            }
+            catch
+            {
+                MessageBox.Show("Failed to convert the second color to hex.");
+            }
         }
 
         /// <summary>
@@ -466,9 +480,16 @@ namespace FractalsApp
             {
                 return;
             }
-            pictureBoxOfFractal.Image.Save(saveFileDialog.FileName, 
-                ImageFormat.Png);
-            MessageBox.Show("The image is saved.");
+            try
+            {
+                pictureBoxOfFractal.Image.Save(saveFileDialog.FileName,
+                    ImageFormat.Png);
+                MessageBox.Show("The image is saved.");
+            }
+            catch
+            {
+                MessageBox.Show("Failed to save.");
+            }
         }
     }
 }
