@@ -1,18 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace FractalsApp
 {
     class KochCurve : Fractal
     {
+        /// <summary>
+        /// Width of the fractal (for calculations).
+        /// </summary>
         private float FractalWidth
             => Math.Min(Iterations * BaseLength, 3000);
 
+        /// <summary>
+        /// Height of the fractal (for calculations).
+        /// </summary>
         private float FractalHeight
             => Math.Min(Iterations * BaseLength, 3000);
 
+        /// <summary>
+        /// Background color (to remove unnecessary segments).
+        /// </summary>
         public Color BackColor { get; set; } = Color.Gray;
 
         public override float BaseLengthRatio => 2;
@@ -27,7 +34,7 @@ namespace FractalsApp
         {
             var pen = new Pen(Colors[0], 2);
             var eraser = new Pen(BackColor, 2);
-            //Определим координаты исходного треугольника
+            // Determine the coordinates of the base triangle.
             var leftPoint = new PointF(0, FractalHeight - FractalHeight / 20);
             var rightPoint = new PointF(FractalWidth, FractalHeight - FractalHeight / 20);
             var topPoint = new PointF(FractalWidth / 2, 2 * FractalHeight);
@@ -35,6 +42,10 @@ namespace FractalsApp
             DrawLayer(leftPoint, rightPoint, topPoint, pen, eraser, Iterations);
         }
 
+        /// <summary>
+        /// Recursive method for drawing a fractal. 
+        /// Draws a single layer at a single recursion step.
+        /// </summary>
         public void DrawLayer(PointF leftPoint, PointF rightPoint, PointF topPoint, 
             Pen pen, Pen eraser, int iteration)
         {
@@ -62,6 +73,10 @@ namespace FractalsApp
                 (2 * rightPoint.Y + topPoint.Y) / 3), pen, eraser, iteration - 1);
         }
 
+        /// <summary>
+        /// General method for drawing segments.
+        /// All points are raised for visual beauty.
+        /// </summary>
         private void DrawSegment(Pen pen, PointF first, PointF second)
         {
             float heightDelta = FractalHeight / (float)1.7;

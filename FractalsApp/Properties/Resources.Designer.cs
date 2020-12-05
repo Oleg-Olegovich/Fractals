@@ -63,9 +63,9 @@ namespace FractalsApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tree_736885 {
+        internal static System.Drawing.Bitmap fractal_tree {
             get {
-                object obj = ResourceManager.GetObject("tree-736885", resourceCulture);
+                object obj = ResourceManager.GetObject("fractal_tree", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

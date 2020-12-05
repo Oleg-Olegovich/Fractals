@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace FractalsApp
 {
@@ -25,11 +23,14 @@ namespace FractalsApp
             DrawLayer(Iterations, topPoint, leftPoint, rightPoint, 0);
         }
 
-        // Draw a triangle between the points.
+        /// <summary>
+        /// Recursive method for drawing a fractal. 
+        /// Draws a single layer at a single recursion step.
+        /// </summary>
         private void DrawLayer(int iteration, PointF topPoint, 
             PointF leftPoint, PointF rightPoint, int colorIndex)
         {
-            // See if we should stop.
+            // See if the recursion should stop.
             if (iteration == 1)
             {
                 // Fill the triangle.
@@ -37,6 +38,7 @@ namespace FractalsApp
                 {
                     topPoint, rightPoint, leftPoint
                 };
+                // Draw a triangle between the points.
                 Graphics.DrawPolygon(new Pen(Colors[colorIndex], 2), 
                     points);
             }

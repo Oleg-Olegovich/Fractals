@@ -13,6 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Properties\fractal_tree.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Properties\fractal_tree.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

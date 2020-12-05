@@ -30,17 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tableLayoutPanelOfMainMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonGoToGeneration = new System.Windows.Forms.Button();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelWelcome = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanelOfMainMenuButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonEnglishHelp = new System.Windows.Forms.Button();
+            this.buttonGoToGeneration = new System.Windows.Forms.Button();
+            this.buttonRussianHelp = new System.Windows.Forms.Button();
             this.labelDescription = new System.Windows.Forms.Label();
             this.tableLayoutPanelOfGeneration = new System.Windows.Forms.TableLayoutPanel();
             this.panelOfGenerationSettings = new System.Windows.Forms.Panel();
-            this.panelOfCantorSetSettings = new System.Windows.Forms.Panel();
-            this.textBoxLayerHeight = new System.Windows.Forms.TextBox();
-            this.labelLayerHeight = new System.Windows.Forms.Label();
-            this.textBoxIterationDistance = new System.Windows.Forms.TextBox();
-            this.labelIterationDistance = new System.Windows.Forms.Label();
             this.labelTypesOfFractals = new System.Windows.Forms.Label();
             this.comboBoxTypesOfFractals = new System.Windows.Forms.ComboBox();
             this.labelFirstColor = new System.Windows.Forms.Label();
@@ -51,27 +49,35 @@
             this.trackBarDepth = new System.Windows.Forms.TrackBar();
             this.labelScale = new System.Windows.Forms.Label();
             this.trackBarScale = new System.Windows.Forms.TrackBar();
-            this.tableLayoutPanelOfFractalTreeSettings = new System.Windows.Forms.TableLayoutPanel();
-            this.labelFirstAngleDelta = new System.Windows.Forms.Label();
-            this.textBoxFirstAngleDelta = new System.Windows.Forms.TextBox();
-            this.labelSecondAngleDelta = new System.Windows.Forms.Label();
-            this.labelLengthRatio = new System.Windows.Forms.Label();
-            this.textBoxSecondAngleDelta = new System.Windows.Forms.TextBox();
-            this.textBoxLengthRatio = new System.Windows.Forms.TextBox();
             this.flowLayoutPanelOfButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonGoToMainMenu = new System.Windows.Forms.Button();
             this.buttonSaveImage = new System.Windows.Forms.Button();
+            this.tableLayoutPanelOfFractalTreeSettings = new System.Windows.Forms.TableLayoutPanel();
+            this.labelFirstAngleDelta = new System.Windows.Forms.Label();
+            this.textBoxFirstAngleDelta = new System.Windows.Forms.TextBox();
+            this.labelLengthRatio = new System.Windows.Forms.Label();
+            this.textBoxSecondAngleDelta = new System.Windows.Forms.TextBox();
+            this.textBoxLengthRatio = new System.Windows.Forms.TextBox();
+            this.labelSecondAngleDelta = new System.Windows.Forms.Label();
+            this.panelOfCantorSetSettings = new System.Windows.Forms.Panel();
+            this.textBoxLayerHeight = new System.Windows.Forms.TextBox();
+            this.labelLayerHeight = new System.Windows.Forms.Label();
+            this.textBoxIterationDistance = new System.Windows.Forms.TextBox();
+            this.labelIterationDistance = new System.Windows.Forms.Label();
             this.panelOfFractalImage = new System.Windows.Forms.Panel();
             this.pictureBoxOfFractal = new System.Windows.Forms.PictureBox();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanelOfMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.flowLayoutPanelOfMainMenuButtons.SuspendLayout();
             this.tableLayoutPanelOfGeneration.SuspendLayout();
             this.panelOfGenerationSettings.SuspendLayout();
-            this.panelOfCantorSetSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
-            this.tableLayoutPanelOfFractalTreeSettings.SuspendLayout();
             this.flowLayoutPanelOfButtons.SuspendLayout();
+            this.tableLayoutPanelOfFractalTreeSettings.SuspendLayout();
+            this.panelOfCantorSetSettings.SuspendLayout();
             this.panelOfFractalImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOfFractal)).BeginInit();
             this.SuspendLayout();
@@ -81,9 +87,9 @@
             this.tableLayoutPanelOfMainMenu.AutoSize = true;
             this.tableLayoutPanelOfMainMenu.ColumnCount = 1;
             this.tableLayoutPanelOfMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelOfMainMenu.Controls.Add(this.buttonGoToGeneration, 0, 4);
-            this.tableLayoutPanelOfMainMenu.Controls.Add(this.pictureBoxLogo, 0, 2);
             this.tableLayoutPanelOfMainMenu.Controls.Add(this.labelWelcome, 0, 0);
+            this.tableLayoutPanelOfMainMenu.Controls.Add(this.pictureBoxLogo, 0, 1);
+            this.tableLayoutPanelOfMainMenu.Controls.Add(this.flowLayoutPanelOfMainMenuButtons, 0, 3);
             this.tableLayoutPanelOfMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelOfMainMenu.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelOfMainMenu.Margin = new System.Windows.Forms.Padding(2);
@@ -91,40 +97,12 @@
             this.tableLayoutPanelOfMainMenu.Name = "tableLayoutPanelOfMainMenu";
             this.tableLayoutPanelOfMainMenu.RowCount = 5;
             this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelOfMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelOfMainMenu.Size = new System.Drawing.Size(751, 644);
             this.tableLayoutPanelOfMainMenu.TabIndex = 4;
-            // 
-            // buttonGoToGeneration
-            // 
-            this.buttonGoToGeneration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonGoToGeneration.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGoToGeneration.Location = new System.Drawing.Point(325, 548);
-            this.buttonGoToGeneration.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGoToGeneration.Name = "buttonGoToGeneration";
-            this.buttonGoToGeneration.Size = new System.Drawing.Size(101, 94);
-            this.buttonGoToGeneration.TabIndex = 0;
-            this.buttonGoToGeneration.Text = "Generate";
-            this.buttonGoToGeneration.UseVisualStyleBackColor = true;
-            this.buttonGoToGeneration.Click += new System.EventHandler(this.ButtonGoToGenerationClick);
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(2, 162);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(747, 318);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 2;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // labelWelcome
             // 
@@ -138,6 +116,68 @@
             this.labelWelcome.TabIndex = 0;
             this.labelWelcome.Text = "Welcome to the fractal auto generator!";
             this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(2, 98);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(747, 318);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 2;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // flowLayoutPanelOfMainMenuButtons
+            // 
+            this.flowLayoutPanelOfMainMenuButtons.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanelOfMainMenuButtons.AutoSize = true;
+            this.flowLayoutPanelOfMainMenuButtons.Controls.Add(this.buttonEnglishHelp);
+            this.flowLayoutPanelOfMainMenuButtons.Controls.Add(this.buttonGoToGeneration);
+            this.flowLayoutPanelOfMainMenuButtons.Controls.Add(this.buttonRussianHelp);
+            this.flowLayoutPanelOfMainMenuButtons.Location = new System.Drawing.Point(153, 500);
+            this.flowLayoutPanelOfMainMenuButtons.Name = "flowLayoutPanelOfMainMenuButtons";
+            this.flowLayoutPanelOfMainMenuButtons.Size = new System.Drawing.Size(444, 60);
+            this.flowLayoutPanelOfMainMenuButtons.TabIndex = 3;
+            // 
+            // buttonEnglishHelp
+            // 
+            this.buttonEnglishHelp.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEnglishHelp.Location = new System.Drawing.Point(2, 2);
+            this.buttonEnglishHelp.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEnglishHelp.Name = "buttonEnglishHelp";
+            this.buttonEnglishHelp.Size = new System.Drawing.Size(144, 56);
+            this.buttonEnglishHelp.TabIndex = 0;
+            this.buttonEnglishHelp.Text = "Help";
+            this.buttonEnglishHelp.UseVisualStyleBackColor = true;
+            this.buttonEnglishHelp.Click += new System.EventHandler(this.ButtonEnglishHelpClick);
+            // 
+            // buttonGoToGeneration
+            // 
+            this.buttonGoToGeneration.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGoToGeneration.Location = new System.Drawing.Point(150, 2);
+            this.buttonGoToGeneration.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGoToGeneration.Name = "buttonGoToGeneration";
+            this.buttonGoToGeneration.Size = new System.Drawing.Size(144, 56);
+            this.buttonGoToGeneration.TabIndex = 0;
+            this.buttonGoToGeneration.Text = "Generate";
+            this.buttonGoToGeneration.UseVisualStyleBackColor = true;
+            this.buttonGoToGeneration.Click += new System.EventHandler(this.ButtonGoToGenerationClick);
+            // 
+            // buttonRussianHelp
+            // 
+            this.buttonRussianHelp.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonRussianHelp.Location = new System.Drawing.Point(298, 2);
+            this.buttonRussianHelp.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRussianHelp.Name = "buttonRussianHelp";
+            this.buttonRussianHelp.Size = new System.Drawing.Size(144, 56);
+            this.buttonRussianHelp.TabIndex = 0;
+            this.buttonRussianHelp.Text = "Справка";
+            this.buttonRussianHelp.UseVisualStyleBackColor = true;
+            this.buttonRussianHelp.Click += new System.EventHandler(this.ButtonRussianHelpClick);
             // 
             // labelDescription
             // 
@@ -176,7 +216,6 @@
             // 
             this.panelOfGenerationSettings.AutoScroll = true;
             this.panelOfGenerationSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelOfGenerationSettings.Controls.Add(this.panelOfCantorSetSettings);
             this.panelOfGenerationSettings.Controls.Add(this.labelTypesOfFractals);
             this.panelOfGenerationSettings.Controls.Add(this.comboBoxTypesOfFractals);
             this.panelOfGenerationSettings.Controls.Add(this.labelFirstColor);
@@ -187,8 +226,9 @@
             this.panelOfGenerationSettings.Controls.Add(this.trackBarDepth);
             this.panelOfGenerationSettings.Controls.Add(this.labelScale);
             this.panelOfGenerationSettings.Controls.Add(this.trackBarScale);
-            this.panelOfGenerationSettings.Controls.Add(this.tableLayoutPanelOfFractalTreeSettings);
             this.panelOfGenerationSettings.Controls.Add(this.flowLayoutPanelOfButtons);
+            this.panelOfGenerationSettings.Controls.Add(this.tableLayoutPanelOfFractalTreeSettings);
+            this.panelOfGenerationSettings.Controls.Add(this.panelOfCantorSetSettings);
             this.panelOfGenerationSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelOfGenerationSettings.Location = new System.Drawing.Point(2, 66);
             this.panelOfGenerationSettings.Margin = new System.Windows.Forms.Padding(2);
@@ -196,59 +236,11 @@
             this.panelOfGenerationSettings.Size = new System.Drawing.Size(302, 576);
             this.panelOfGenerationSettings.TabIndex = 0;
             // 
-            // panelOfCantorSetSettings
-            // 
-            this.panelOfCantorSetSettings.AutoSize = true;
-            this.panelOfCantorSetSettings.Controls.Add(this.textBoxLayerHeight);
-            this.panelOfCantorSetSettings.Controls.Add(this.labelLayerHeight);
-            this.panelOfCantorSetSettings.Controls.Add(this.textBoxIterationDistance);
-            this.panelOfCantorSetSettings.Controls.Add(this.labelIterationDistance);
-            this.panelOfCantorSetSettings.Location = new System.Drawing.Point(5, 374);
-            this.panelOfCantorSetSettings.Name = "panelOfCantorSetSettings";
-            this.panelOfCantorSetSettings.Size = new System.Drawing.Size(251, 102);
-            this.panelOfCantorSetSettings.TabIndex = 14;
-            // 
-            // textBoxLayerHeight
-            // 
-            this.textBoxLayerHeight.Location = new System.Drawing.Point(12, 69);
-            this.textBoxLayerHeight.Name = "textBoxLayerHeight";
-            this.textBoxLayerHeight.Size = new System.Drawing.Size(149, 23);
-            this.textBoxLayerHeight.TabIndex = 1;
-            this.textBoxLayerHeight.Text = "10";
-            this.textBoxLayerHeight.TextChanged += new System.EventHandler(this.TextBoxLayerHeightTextChanged);
-            // 
-            // labelLayerHeight
-            // 
-            this.labelLayerHeight.AutoSize = true;
-            this.labelLayerHeight.Location = new System.Drawing.Point(12, 51);
-            this.labelLayerHeight.Name = "labelLayerHeight";
-            this.labelLayerHeight.Size = new System.Drawing.Size(72, 15);
-            this.labelLayerHeight.TabIndex = 0;
-            this.labelLayerHeight.Text = "Layer height";
-            // 
-            // textBoxIterationDistance
-            // 
-            this.textBoxIterationDistance.Location = new System.Drawing.Point(14, 25);
-            this.textBoxIterationDistance.Name = "textBoxIterationDistance";
-            this.textBoxIterationDistance.Size = new System.Drawing.Size(149, 23);
-            this.textBoxIterationDistance.TabIndex = 1;
-            this.textBoxIterationDistance.Text = "10";
-            this.textBoxIterationDistance.TextChanged += new System.EventHandler(this.TextBoxIterationDistanceTextChanged);
-            // 
-            // labelIterationDistance
-            // 
-            this.labelIterationDistance.AutoSize = true;
-            this.labelIterationDistance.Location = new System.Drawing.Point(12, 7);
-            this.labelIterationDistance.Name = "labelIterationDistance";
-            this.labelIterationDistance.Size = new System.Drawing.Size(152, 15);
-            this.labelIterationDistance.TabIndex = 0;
-            this.labelIterationDistance.Text = "Distance between iterations";
-            // 
             // labelTypesOfFractals
             // 
             this.labelTypesOfFractals.AutoSize = true;
             this.labelTypesOfFractals.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTypesOfFractals.Location = new System.Drawing.Point(3, -5);
+            this.labelTypesOfFractals.Location = new System.Drawing.Point(3, 3);
             this.labelTypesOfFractals.Name = "labelTypesOfFractals";
             this.labelTypesOfFractals.Size = new System.Drawing.Size(137, 15);
             this.labelTypesOfFractals.TabIndex = 7;
@@ -276,7 +268,7 @@
             // labelFirstColor
             // 
             this.labelFirstColor.AutoSize = true;
-            this.labelFirstColor.Location = new System.Drawing.Point(0, 57);
+            this.labelFirstColor.Location = new System.Drawing.Point(0, 56);
             this.labelFirstColor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFirstColor.Name = "labelFirstColor";
             this.labelFirstColor.Size = new System.Drawing.Size(59, 15);
@@ -291,6 +283,7 @@
             this.textBoxFirstColor.Size = new System.Drawing.Size(167, 23);
             this.textBoxFirstColor.TabIndex = 2;
             this.textBoxFirstColor.Text = "#000000";
+            this.textBoxFirstColor.Click += new System.EventHandler(this.TextBoxFirstColorClick);
             this.textBoxFirstColor.TextChanged += new System.EventHandler(this.TextBoxFirstColorTextChanged);
             // 
             // labelLastColor
@@ -311,6 +304,7 @@
             this.textBoxLastColor.Size = new System.Drawing.Size(167, 23);
             this.textBoxLastColor.TabIndex = 4;
             this.textBoxLastColor.Text = "#FFFFFF";
+            this.textBoxLastColor.Click += new System.EventHandler(this.TextBoxLastColorClick);
             this.textBoxLastColor.TextChanged += new System.EventHandler(this.TextBoxLastColorTextChanged);
             // 
             // labelDepth
@@ -355,81 +349,6 @@
             this.trackBarScale.Value = 1;
             this.trackBarScale.Scroll += new System.EventHandler(this.TrackBarScaleScroll);
             // 
-            // tableLayoutPanelOfFractalTreeSettings
-            // 
-            this.tableLayoutPanelOfFractalTreeSettings.ColumnCount = 3;
-            this.tableLayoutPanelOfFractalTreeSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelOfFractalTreeSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelOfFractalTreeSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelFirstAngleDelta, 0, 0);
-            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxFirstAngleDelta, 0, 1);
-            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelSecondAngleDelta, 1, 0);
-            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelLengthRatio, 2, 0);
-            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxSecondAngleDelta, 1, 1);
-            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxLengthRatio, 2, 1);
-            this.tableLayoutPanelOfFractalTreeSettings.Location = new System.Drawing.Point(3, 376);
-            this.tableLayoutPanelOfFractalTreeSettings.Name = "tableLayoutPanelOfFractalTreeSettings";
-            this.tableLayoutPanelOfFractalTreeSettings.RowCount = 2;
-            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelOfFractalTreeSettings.Size = new System.Drawing.Size(253, 100);
-            this.tableLayoutPanelOfFractalTreeSettings.TabIndex = 13;
-            // 
-            // labelFirstAngleDelta
-            // 
-            this.labelFirstAngleDelta.AutoSize = true;
-            this.labelFirstAngleDelta.Location = new System.Drawing.Point(3, 0);
-            this.labelFirstAngleDelta.Name = "labelFirstAngleDelta";
-            this.labelFirstAngleDelta.Size = new System.Drawing.Size(64, 30);
-            this.labelFirstAngleDelta.TabIndex = 10;
-            this.labelFirstAngleDelta.Text = "First angle delta";
-            // 
-            // textBoxFirstAngleDelta
-            // 
-            this.textBoxFirstAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFirstAngleDelta.Location = new System.Drawing.Point(3, 63);
-            this.textBoxFirstAngleDelta.Name = "textBoxFirstAngleDelta";
-            this.textBoxFirstAngleDelta.Size = new System.Drawing.Size(78, 23);
-            this.textBoxFirstAngleDelta.TabIndex = 11;
-            this.textBoxFirstAngleDelta.TextChanged += new System.EventHandler(this.TextBoxFirstAngleDeltaTextChanged);
-            // 
-            // labelSecondAngleDelta
-            // 
-            this.labelSecondAngleDelta.AutoSize = true;
-            this.labelSecondAngleDelta.Location = new System.Drawing.Point(87, 0);
-            this.labelSecondAngleDelta.Name = "labelSecondAngleDelta";
-            this.labelSecondAngleDelta.Size = new System.Drawing.Size(78, 30);
-            this.labelSecondAngleDelta.TabIndex = 12;
-            this.labelSecondAngleDelta.Text = "Second angle delta";
-            // 
-            // labelLengthRatio
-            // 
-            this.labelLengthRatio.AutoSize = true;
-            this.labelLengthRatio.Location = new System.Drawing.Point(171, 0);
-            this.labelLengthRatio.Name = "labelLengthRatio";
-            this.labelLengthRatio.Size = new System.Drawing.Size(51, 30);
-            this.labelLengthRatio.TabIndex = 13;
-            this.labelLengthRatio.Text = "Ratio of length";
-            // 
-            // textBoxSecondAngleDelta
-            // 
-            this.textBoxSecondAngleDelta.AcceptsTab = true;
-            this.textBoxSecondAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSecondAngleDelta.Location = new System.Drawing.Point(87, 63);
-            this.textBoxSecondAngleDelta.Name = "textBoxSecondAngleDelta";
-            this.textBoxSecondAngleDelta.Size = new System.Drawing.Size(78, 23);
-            this.textBoxSecondAngleDelta.TabIndex = 14;
-            this.textBoxSecondAngleDelta.TextChanged += new System.EventHandler(this.TextBoxSecondAngleDeltaTextChanged);
-            // 
-            // textBoxLengthRatio
-            // 
-            this.textBoxLengthRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLengthRatio.Location = new System.Drawing.Point(171, 63);
-            this.textBoxLengthRatio.Name = "textBoxLengthRatio";
-            this.textBoxLengthRatio.Size = new System.Drawing.Size(79, 23);
-            this.textBoxLengthRatio.TabIndex = 15;
-            this.textBoxLengthRatio.TextChanged += new System.EventHandler(this.TextBoxLengthRatioTextChanged);
-            // 
             // flowLayoutPanelOfButtons
             // 
             this.flowLayoutPanelOfButtons.AutoSize = true;
@@ -460,6 +379,130 @@
             this.buttonSaveImage.TabIndex = 10;
             this.buttonSaveImage.Text = "Save image";
             this.buttonSaveImage.UseVisualStyleBackColor = true;
+            this.buttonSaveImage.Click += new System.EventHandler(this.ButtonSaveImageClick);
+            // 
+            // tableLayoutPanelOfFractalTreeSettings
+            // 
+            this.tableLayoutPanelOfFractalTreeSettings.ColumnCount = 3;
+            this.tableLayoutPanelOfFractalTreeSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfFractalTreeSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfFractalTreeSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelFirstAngleDelta, 0, 0);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxFirstAngleDelta, 0, 1);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelLengthRatio, 2, 0);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxSecondAngleDelta, 1, 1);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxLengthRatio, 2, 1);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelSecondAngleDelta, 1, 0);
+            this.tableLayoutPanelOfFractalTreeSettings.Location = new System.Drawing.Point(3, 376);
+            this.tableLayoutPanelOfFractalTreeSettings.Name = "tableLayoutPanelOfFractalTreeSettings";
+            this.tableLayoutPanelOfFractalTreeSettings.RowCount = 2;
+            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOfFractalTreeSettings.Size = new System.Drawing.Size(253, 100);
+            this.tableLayoutPanelOfFractalTreeSettings.TabIndex = 13;
+            // 
+            // labelFirstAngleDelta
+            // 
+            this.labelFirstAngleDelta.AutoSize = true;
+            this.labelFirstAngleDelta.Location = new System.Drawing.Point(3, 0);
+            this.labelFirstAngleDelta.Name = "labelFirstAngleDelta";
+            this.labelFirstAngleDelta.Size = new System.Drawing.Size(64, 30);
+            this.labelFirstAngleDelta.TabIndex = 10;
+            this.labelFirstAngleDelta.Text = "First angle delta";
+            // 
+            // textBoxFirstAngleDelta
+            // 
+            this.textBoxFirstAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFirstAngleDelta.Location = new System.Drawing.Point(3, 63);
+            this.textBoxFirstAngleDelta.Name = "textBoxFirstAngleDelta";
+            this.textBoxFirstAngleDelta.Size = new System.Drawing.Size(78, 23);
+            this.textBoxFirstAngleDelta.TabIndex = 11;
+            this.textBoxFirstAngleDelta.TextChanged += new System.EventHandler(this.TextBoxFirstAngleDeltaTextChanged);
+            // 
+            // labelLengthRatio
+            // 
+            this.labelLengthRatio.AutoSize = true;
+            this.labelLengthRatio.Location = new System.Drawing.Point(171, 0);
+            this.labelLengthRatio.Name = "labelLengthRatio";
+            this.labelLengthRatio.Size = new System.Drawing.Size(51, 30);
+            this.labelLengthRatio.TabIndex = 13;
+            this.labelLengthRatio.Text = "Ratio of length";
+            // 
+            // textBoxSecondAngleDelta
+            // 
+            this.textBoxSecondAngleDelta.AcceptsTab = true;
+            this.textBoxSecondAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSecondAngleDelta.Location = new System.Drawing.Point(87, 63);
+            this.textBoxSecondAngleDelta.Name = "textBoxSecondAngleDelta";
+            this.textBoxSecondAngleDelta.Size = new System.Drawing.Size(78, 23);
+            this.textBoxSecondAngleDelta.TabIndex = 14;
+            this.textBoxSecondAngleDelta.TextChanged += new System.EventHandler(this.TextBoxSecondAngleDeltaTextChanged);
+            // 
+            // textBoxLengthRatio
+            // 
+            this.textBoxLengthRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLengthRatio.Location = new System.Drawing.Point(171, 63);
+            this.textBoxLengthRatio.Name = "textBoxLengthRatio";
+            this.textBoxLengthRatio.Size = new System.Drawing.Size(79, 23);
+            this.textBoxLengthRatio.TabIndex = 15;
+            this.textBoxLengthRatio.TextChanged += new System.EventHandler(this.TextBoxLengthRatioTextChanged);
+            // 
+            // labelSecondAngleDelta
+            // 
+            this.labelSecondAngleDelta.AutoSize = true;
+            this.labelSecondAngleDelta.Location = new System.Drawing.Point(87, 0);
+            this.labelSecondAngleDelta.Name = "labelSecondAngleDelta";
+            this.labelSecondAngleDelta.Size = new System.Drawing.Size(78, 30);
+            this.labelSecondAngleDelta.TabIndex = 12;
+            this.labelSecondAngleDelta.Text = "Second angle delta";
+            // 
+            // panelOfCantorSetSettings
+            // 
+            this.panelOfCantorSetSettings.AutoSize = true;
+            this.panelOfCantorSetSettings.Controls.Add(this.textBoxLayerHeight);
+            this.panelOfCantorSetSettings.Controls.Add(this.labelLayerHeight);
+            this.panelOfCantorSetSettings.Controls.Add(this.textBoxIterationDistance);
+            this.panelOfCantorSetSettings.Controls.Add(this.labelIterationDistance);
+            this.panelOfCantorSetSettings.Location = new System.Drawing.Point(5, 372);
+            this.panelOfCantorSetSettings.Name = "panelOfCantorSetSettings";
+            this.panelOfCantorSetSettings.Size = new System.Drawing.Size(251, 103);
+            this.panelOfCantorSetSettings.TabIndex = 14;
+            // 
+            // textBoxLayerHeight
+            // 
+            this.textBoxLayerHeight.Location = new System.Drawing.Point(15, 73);
+            this.textBoxLayerHeight.Name = "textBoxLayerHeight";
+            this.textBoxLayerHeight.Size = new System.Drawing.Size(149, 23);
+            this.textBoxLayerHeight.TabIndex = 1;
+            this.textBoxLayerHeight.Text = "10";
+            this.textBoxLayerHeight.TextChanged += new System.EventHandler(this.TextBoxLayerHeightTextChanged);
+            // 
+            // labelLayerHeight
+            // 
+            this.labelLayerHeight.AutoSize = true;
+            this.labelLayerHeight.Location = new System.Drawing.Point(12, 55);
+            this.labelLayerHeight.Name = "labelLayerHeight";
+            this.labelLayerHeight.Size = new System.Drawing.Size(72, 15);
+            this.labelLayerHeight.TabIndex = 0;
+            this.labelLayerHeight.Text = "Layer height";
+            // 
+            // textBoxIterationDistance
+            // 
+            this.textBoxIterationDistance.Location = new System.Drawing.Point(14, 26);
+            this.textBoxIterationDistance.Name = "textBoxIterationDistance";
+            this.textBoxIterationDistance.Size = new System.Drawing.Size(149, 23);
+            this.textBoxIterationDistance.TabIndex = 1;
+            this.textBoxIterationDistance.Text = "10";
+            this.textBoxIterationDistance.TextChanged += new System.EventHandler(this.TextBoxIterationDistanceTextChanged);
+            // 
+            // labelIterationDistance
+            // 
+            this.labelIterationDistance.AutoSize = true;
+            this.labelIterationDistance.Location = new System.Drawing.Point(12, 5);
+            this.labelIterationDistance.Name = "labelIterationDistance";
+            this.labelIterationDistance.Size = new System.Drawing.Size(152, 15);
+            this.labelIterationDistance.TabIndex = 0;
+            this.labelIterationDistance.Text = "Distance between iterations";
             // 
             // panelOfFractalImage
             // 
@@ -481,31 +524,31 @@
             this.pictureBoxOfFractal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxOfFractal.TabIndex = 1;
             this.pictureBoxOfFractal.TabStop = false;
-            this.pictureBoxOfFractal.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxOfFractalPaint);
             // 
             // FormMain
             // 
             this.ClientSize = new System.Drawing.Size(751, 644);
-            this.Controls.Add(this.tableLayoutPanelOfGeneration);
             this.Controls.Add(this.tableLayoutPanelOfMainMenu);
+            this.Controls.Add(this.tableLayoutPanelOfGeneration);
             this.MinimumSize = new System.Drawing.Size(600, 410);
             this.Name = "FormMain";
             this.Resize += new System.EventHandler(this.FormMainMenuResize);
             this.tableLayoutPanelOfMainMenu.ResumeLayout(false);
             this.tableLayoutPanelOfMainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.flowLayoutPanelOfMainMenuButtons.ResumeLayout(false);
             this.tableLayoutPanelOfGeneration.ResumeLayout(false);
             this.tableLayoutPanelOfGeneration.PerformLayout();
             this.panelOfGenerationSettings.ResumeLayout(false);
             this.panelOfGenerationSettings.PerformLayout();
-            this.panelOfCantorSetSettings.ResumeLayout(false);
-            this.panelOfCantorSetSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
-            this.tableLayoutPanelOfFractalTreeSettings.ResumeLayout(false);
-            this.tableLayoutPanelOfFractalTreeSettings.PerformLayout();
             this.flowLayoutPanelOfButtons.ResumeLayout(false);
             this.flowLayoutPanelOfButtons.PerformLayout();
+            this.tableLayoutPanelOfFractalTreeSettings.ResumeLayout(false);
+            this.tableLayoutPanelOfFractalTreeSettings.PerformLayout();
+            this.panelOfCantorSetSettings.ResumeLayout(false);
+            this.panelOfCantorSetSettings.PerformLayout();
             this.panelOfFractalImage.ResumeLayout(false);
             this.panelOfFractalImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOfFractal)).EndInit();
@@ -517,7 +560,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelOfMainMenu;
-        private System.Windows.Forms.Button buttonGoToGeneration;
+        private System.Windows.Forms.Button buttonEnglishHelp;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Label labelDescription;
@@ -551,6 +594,11 @@
         private System.Windows.Forms.Label labelRectangleWidth;
         private System.Windows.Forms.TextBox textBoxLayerHeight;
         private System.Windows.Forms.Label labelLayerHeight;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOfMainMenuButtons;
+        private System.Windows.Forms.Button buttonGoToGeneration;
+        private System.Windows.Forms.Button buttonRussianHelp;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

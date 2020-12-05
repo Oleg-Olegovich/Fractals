@@ -7,8 +7,14 @@ namespace FractalsApp
 {
     class CantorSet : Fractal
     {
+        /// <summary>
+        /// Vertical distance between layers.
+        /// </summary>
         public float IterationDistance { get; set; } = 10;
 
+        /// <summary>
+        /// Layer height (the height of each rectangle).
+        /// </summary>
         public float LayerHeight { get; set; }
 
         public override float BaseLengthRatio => 4;
@@ -25,6 +31,10 @@ namespace FractalsApp
             DrawLayer(0, 0, BaseLength, Iterations);
         }
 
+        /// <summary>
+        /// Recursive method for drawing a fractal. 
+        /// Draws a single layer at a single recursion step.
+        /// </summary>
         public void DrawLayer(float x, float y, float width, int iteration)
         {
             using (var brush = new SolidBrush(Colors[Iterations - iteration]))
