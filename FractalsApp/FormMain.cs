@@ -273,7 +273,7 @@ namespace FractalsApp
         /// <summary>
         /// Processing resizing of the application window.
         /// </summary>
-        private void FormMainMenuResize(object sender, EventArgs e)
+        private void FormMainResize(object sender, EventArgs e)
         {
             RedrawFractal();
         }

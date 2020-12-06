@@ -599,7 +599,7 @@
             this.Controls.Add(this.tableLayoutPanelOfGeneration);
             this.MinimumSize = new System.Drawing.Size(600, 410);
             this.Name = "FormMain";
-            this.Resize += new System.EventHandler(this.FormMainMenuResize);
+            this.Resize += new System.EventHandler(this.FormMainResize);
             this.tableLayoutPanelOfMainMenu.ResumeLayout(false);
             this.tableLayoutPanelOfMainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
