@@ -444,7 +444,7 @@ namespace FractalsApp
             }
             try
             {
-                textBoxLastColor.Text = ColorTranslator.ToHtml(colorDialog.Color);
+                textBoxFirstColor.Text = ColorTranslator.ToHtml(colorDialog.Color);
             }
             catch
             {
