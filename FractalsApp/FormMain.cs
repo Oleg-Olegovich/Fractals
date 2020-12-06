@@ -72,7 +72,7 @@ namespace FractalsApp
             trackBarDepth.Maximum = (int)MaxDepth.FractalTree;
             // The color that will "erase" unnecessary segments.
             _kochCurve.BackColor = BackColor;
-            panelOfCantorSetSettings.Visible = false;
+            tableLayoutPanelOfCantorSetSettings.Visible = false;
             int minimumHeight = Screen.PrimaryScreen.WorkingArea.Height / 2;
             int minimumWidth = Screen.PrimaryScreen.WorkingArea.Width / 2;
             /* The minimum size of the application window is half 
@@ -166,13 +166,13 @@ namespace FractalsApp
         private bool TryParseAngle(string input, out double angle)
         {
             if (double.TryParse(input, out angle)
-                && angle > 0 && angle <= Math.PI / 2)
+                && angle > 0 && angle <= Math.PI / 18)
             {
                 return true;
             }
             ShowErrorMessage("Invalid angle delta set." + _endl
                     + "Enter a real number in half-interval (0; PI / 2].");
-            angle = Math.PI / 2;
+            angle = Math.PI / 18;
             return false;
         }
 
@@ -218,7 +218,7 @@ namespace FractalsApp
         private void ComboBoxTypesOfFractalsSelectedIndexChanged(object sender, EventArgs e)
         {
             tableLayoutPanelOfFractalTreeSettings.Visible = false;
-            panelOfCantorSetSettings.Visible = false;
+            tableLayoutPanelOfCantorSetSettings.Visible = false;
             switch (comboBoxTypesOfFractals.Text)
             {
                 case "Wind-blown fractal tree":
@@ -242,8 +242,8 @@ namespace FractalsApp
                 case "Cantor Set":
                     _fractal = _cantorSet;
                     trackBarDepth.Maximum = (int)MaxDepth.CantorSet;
-                    panelOfCantorSetSettings.Visible = true;
-                    panelOfCantorSetSettings.BringToFront();
+                    tableLayoutPanelOfCantorSetSettings.Visible = true;
+                    tableLayoutPanelOfCantorSetSettings.BringToFront();
                     break;
                 default:
                     ShowErrorMessage("Invalid fractal select." + _endl
@@ -271,100 +271,11 @@ namespace FractalsApp
         }
 
         /// <summary>
-        /// Processing changes in the tilt angle of the first segment.
-        /// It is related only to the fractal tree.
-        /// </summary>
-        private void TextBoxFirstAngleDeltaTextChanged(object sender, EventArgs e)
-        {
-            if (!TryParseAngle(textBoxFirstAngleDelta.Text, out double angle))
-            {
-                textBoxFirstAngleDelta.Text = angle.ToString();
-            }
-            _fractalTree.FirstAngleDelta = angle;
-            RedrawFractal();
-        }
-
-        /// <summary>
-        /// Processing changes in the tilt angle of the second segment.
-        /// It is related only to the fractal tree.
-        /// </summary>
-        private void TextBoxSecondAngleDeltaTextChanged(object sender, EventArgs e)
-        {
-            if (!TryParseAngle(textBoxSecondAngleDelta.Text, out double angle))
-            {
-                textBoxSecondAngleDelta.Text = angle.ToString();
-            }
-            _fractalTree.SecondAngleDelta = angle;
-            RedrawFractal();
-        }
-
-        /// <summary>
-        /// Processing changes in the ratio of the new segment to the 
-        /// previous one. It is related only to the fractal tree.
-        /// </summary>
-        private void TextBoxLengthRatioTextChanged(object sender, EventArgs e)
-        {
-
-            if (float.TryParse(textBoxLengthRatio.Text, out float ratio)
-                && ratio > 0 && ratio <= 1)
-            {
-                _fractalTree.LengthRatio = ratio;
-                RedrawFractal();
-            }
-            else
-            {
-                ShowErrorMessage("Invalid ratio of the length set."
-                    + _endl + "Enter a real number in half-interval (0; 1].");
-                _fractalTree.LengthRatio = 0.8f;
-                textBoxLengthRatio.Text = _fractalTree.LengthRatio.ToString();
-            }
-        }
-
-        /// <summary>
         /// Processing resizing of the application window.
         /// </summary>
         private void FormMainMenuResize(object sender, EventArgs e)
         {
             RedrawFractal();
-        }
-
-        /// <summary>
-        /// Processing changes in the distance between iterations (layers).
-        /// It is related only to the Cantor set.
-        /// </summary>
-        private void TextBoxIterationDistanceTextChanged(object sender, EventArgs e)
-        {
-            if (float.TryParse(textBoxIterationDistance.Text, out float distance)
-                && distance >= 1 && distance <= 500)
-            {
-                _cantorSet.IterationDistance = distance;
-                RedrawFractal();
-            }
-            else
-            {
-                ShowErrorMessage("Invalid distance between iterations."
-                    + _endl + "Enter a real number in range [1; 500].");
-                textBoxIterationDistance.Text = "10";
-            }
-        }
-
-        /// <summary>
-        /// Processing changes in the height of a single layer.
-        /// It is related only to the Cantor set.
-        /// </summary>
-        private void TextBoxLayerHeightTextChanged(object sender, EventArgs e)
-        {
-            if (float.TryParse(textBoxLayerHeight.Text, out float distance)
-                && distance >= 5 && distance <= 100)
-            {
-                RedrawFractal();
-            }
-            else
-            {
-                ShowErrorMessage("Invalid layer height."
-                    + _endl + "Enter a real number in range [5; 100].");
-                textBoxLayerHeight.Text = "10";
-            }
         }
 
         /// <summary>
@@ -489,6 +400,95 @@ namespace FractalsApp
             catch
             {
                 MessageBox.Show("Failed to save.");
+            }
+        }
+
+        /// <summary>
+        /// Processing changes in the tilt angle of the first segment.
+        /// It is related only to the fractal tree.
+        /// </summary>
+        private void ButtonSetFirstAngleDeltaClick(object sender, EventArgs e)
+        {
+            if (!TryParseAngle(textBoxFirstAngleDelta.Text, out double angle))
+            {
+                textBoxFirstAngleDelta.Text = angle.ToString();
+            }
+            _fractalTree.FirstAngleDelta = angle;
+            RedrawFractal();
+        }
+
+        /// <summary>
+        /// Processing changes in the tilt angle of the second segment.
+        /// It is related only to the fractal tree.
+        /// </summary>
+        private void ButtonSetSecondAngleDeltaClick(object sender, EventArgs e)
+        {
+            if (!TryParseAngle(textBoxSecondAngleDelta.Text, out double angle))
+            {
+                textBoxSecondAngleDelta.Text = angle.ToString();
+            }
+            _fractalTree.SecondAngleDelta = angle;
+            RedrawFractal();
+        }
+
+        /// <summary>
+        /// Processing changes in the ratio of the new segment to the 
+        /// previous one. It is related only to the fractal tree.
+        /// </summary>
+        private void ButtonSetRatioOfLengthClick(object sender, EventArgs e)
+        {
+            if (float.TryParse(textBoxLengthRatio.Text, out float ratio)
+                && ratio > 0 && ratio <= 1)
+            {
+                _fractalTree.LengthRatio = ratio;
+                RedrawFractal();
+            }
+            else
+            {
+                ShowErrorMessage("Invalid ratio of the length set."
+                    + _endl + "Enter a real number in half-interval (0; 1].");
+                _fractalTree.LengthRatio = 0.8f;
+                textBoxLengthRatio.Text = _fractalTree.LengthRatio.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Processing changes in the distance between iterations (layers).
+        /// It is related only to the Cantor set.
+        /// </summary>
+        private void ButtonSetIterationsDistanceClick(object sender, EventArgs e)
+        {
+            if (float.TryParse(textBoxIterationDistance.Text, out float distance)
+                && distance >= 1 && distance <= 500)
+            {
+                _cantorSet.IterationDistance = distance;
+                RedrawFractal();
+            }
+            else
+            {
+                ShowErrorMessage("Invalid distance between iterations."
+                    + _endl + "Enter a real number in range [1; 500].");
+                textBoxIterationDistance.Text = "10";
+            }
+        }
+
+        /// <summary>
+        /// Processing changes in the height of a single layer.
+        /// It is related only to the Cantor set.
+        /// </summary>
+
+        private void ButtonSetLayerHeightClick(object sender, EventArgs e)
+        {
+            if (float.TryParse(textBoxLayerHeight.Text, out float distance)
+               && distance >= 5 && distance <= 100)
+            {
+                RedrawFractal();
+            }
+            else
+            {
+                ShowErrorMessage("Invalid layer height."
+                    + _endl + "Enter a real number in range [5; 100].");
+                textBoxLayerHeight.Text = "10";
             }
         }
     }

@@ -59,11 +59,16 @@
             this.textBoxSecondAngleDelta = new System.Windows.Forms.TextBox();
             this.textBoxLengthRatio = new System.Windows.Forms.TextBox();
             this.labelSecondAngleDelta = new System.Windows.Forms.Label();
-            this.panelOfCantorSetSettings = new System.Windows.Forms.Panel();
+            this.buttonSetFirstAngleDelta = new System.Windows.Forms.Button();
+            this.buttonSetSecondAngleDelta = new System.Windows.Forms.Button();
+            this.buttonSetRatioOfLength = new System.Windows.Forms.Button();
+            this.tableLayoutPanelOfCantorSetSettings = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLayerHeight = new System.Windows.Forms.TextBox();
-            this.labelLayerHeight = new System.Windows.Forms.Label();
-            this.textBoxIterationDistance = new System.Windows.Forms.TextBox();
             this.labelIterationDistance = new System.Windows.Forms.Label();
+            this.textBoxIterationDistance = new System.Windows.Forms.TextBox();
+            this.labelLayerHeight = new System.Windows.Forms.Label();
+            this.buttonSetIterationsDistance = new System.Windows.Forms.Button();
+            this.buttonSetLayerHeight = new System.Windows.Forms.Button();
             this.panelOfFractalImage = new System.Windows.Forms.Panel();
             this.pictureBoxOfFractal = new System.Windows.Forms.PictureBox();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
@@ -77,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.flowLayoutPanelOfButtons.SuspendLayout();
             this.tableLayoutPanelOfFractalTreeSettings.SuspendLayout();
-            this.panelOfCantorSetSettings.SuspendLayout();
+            this.tableLayoutPanelOfCantorSetSettings.SuspendLayout();
             this.panelOfFractalImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOfFractal)).BeginInit();
             this.SuspendLayout();
@@ -228,7 +233,7 @@
             this.panelOfGenerationSettings.Controls.Add(this.trackBarScale);
             this.panelOfGenerationSettings.Controls.Add(this.flowLayoutPanelOfButtons);
             this.panelOfGenerationSettings.Controls.Add(this.tableLayoutPanelOfFractalTreeSettings);
-            this.panelOfGenerationSettings.Controls.Add(this.panelOfCantorSetSettings);
+            this.panelOfGenerationSettings.Controls.Add(this.tableLayoutPanelOfCantorSetSettings);
             this.panelOfGenerationSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelOfGenerationSettings.Location = new System.Drawing.Point(2, 66);
             this.panelOfGenerationSettings.Margin = new System.Windows.Forms.Padding(2);
@@ -393,11 +398,15 @@
             this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxSecondAngleDelta, 1, 1);
             this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.textBoxLengthRatio, 2, 1);
             this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.labelSecondAngleDelta, 1, 0);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.buttonSetFirstAngleDelta, 0, 2);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.buttonSetSecondAngleDelta, 1, 2);
+            this.tableLayoutPanelOfFractalTreeSettings.Controls.Add(this.buttonSetRatioOfLength, 2, 2);
             this.tableLayoutPanelOfFractalTreeSettings.Location = new System.Drawing.Point(3, 376);
             this.tableLayoutPanelOfFractalTreeSettings.Name = "tableLayoutPanelOfFractalTreeSettings";
-            this.tableLayoutPanelOfFractalTreeSettings.RowCount = 2;
-            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOfFractalTreeSettings.RowCount = 3;
+            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfFractalTreeSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelOfFractalTreeSettings.Size = new System.Drawing.Size(253, 100);
             this.tableLayoutPanelOfFractalTreeSettings.TabIndex = 13;
             // 
@@ -413,11 +422,10 @@
             // textBoxFirstAngleDelta
             // 
             this.textBoxFirstAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFirstAngleDelta.Location = new System.Drawing.Point(3, 63);
+            this.textBoxFirstAngleDelta.Location = new System.Drawing.Point(3, 38);
             this.textBoxFirstAngleDelta.Name = "textBoxFirstAngleDelta";
             this.textBoxFirstAngleDelta.Size = new System.Drawing.Size(78, 23);
             this.textBoxFirstAngleDelta.TabIndex = 11;
-            this.textBoxFirstAngleDelta.TextChanged += new System.EventHandler(this.TextBoxFirstAngleDeltaTextChanged);
             // 
             // labelLengthRatio
             // 
@@ -432,20 +440,18 @@
             // 
             this.textBoxSecondAngleDelta.AcceptsTab = true;
             this.textBoxSecondAngleDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSecondAngleDelta.Location = new System.Drawing.Point(87, 63);
+            this.textBoxSecondAngleDelta.Location = new System.Drawing.Point(87, 38);
             this.textBoxSecondAngleDelta.Name = "textBoxSecondAngleDelta";
             this.textBoxSecondAngleDelta.Size = new System.Drawing.Size(78, 23);
             this.textBoxSecondAngleDelta.TabIndex = 14;
-            this.textBoxSecondAngleDelta.TextChanged += new System.EventHandler(this.TextBoxSecondAngleDeltaTextChanged);
             // 
             // textBoxLengthRatio
             // 
             this.textBoxLengthRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLengthRatio.Location = new System.Drawing.Point(171, 63);
+            this.textBoxLengthRatio.Location = new System.Drawing.Point(171, 38);
             this.textBoxLengthRatio.Name = "textBoxLengthRatio";
             this.textBoxLengthRatio.Size = new System.Drawing.Size(79, 23);
             this.textBoxLengthRatio.TabIndex = 15;
-            this.textBoxLengthRatio.TextChanged += new System.EventHandler(this.TextBoxLengthRatioTextChanged);
             // 
             // labelSecondAngleDelta
             // 
@@ -456,53 +462,114 @@
             this.labelSecondAngleDelta.TabIndex = 12;
             this.labelSecondAngleDelta.Text = "Second angle delta";
             // 
-            // panelOfCantorSetSettings
+            // buttonSetFirstAngleDelta
             // 
-            this.panelOfCantorSetSettings.AutoSize = true;
-            this.panelOfCantorSetSettings.Controls.Add(this.textBoxLayerHeight);
-            this.panelOfCantorSetSettings.Controls.Add(this.labelLayerHeight);
-            this.panelOfCantorSetSettings.Controls.Add(this.textBoxIterationDistance);
-            this.panelOfCantorSetSettings.Controls.Add(this.labelIterationDistance);
-            this.panelOfCantorSetSettings.Location = new System.Drawing.Point(5, 372);
-            this.panelOfCantorSetSettings.Name = "panelOfCantorSetSettings";
-            this.panelOfCantorSetSettings.Size = new System.Drawing.Size(251, 107);
-            this.panelOfCantorSetSettings.TabIndex = 14;
+            this.buttonSetFirstAngleDelta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetFirstAngleDelta.Location = new System.Drawing.Point(3, 69);
+            this.buttonSetFirstAngleDelta.Name = "buttonSetFirstAngleDelta";
+            this.buttonSetFirstAngleDelta.Size = new System.Drawing.Size(78, 28);
+            this.buttonSetFirstAngleDelta.TabIndex = 16;
+            this.buttonSetFirstAngleDelta.Text = "Set angle";
+            this.buttonSetFirstAngleDelta.UseVisualStyleBackColor = true;
+            this.buttonSetFirstAngleDelta.Click += new System.EventHandler(this.ButtonSetFirstAngleDeltaClick);
+            // 
+            // buttonSetSecondAngleDelta
+            // 
+            this.buttonSetSecondAngleDelta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetSecondAngleDelta.Location = new System.Drawing.Point(87, 69);
+            this.buttonSetSecondAngleDelta.Name = "buttonSetSecondAngleDelta";
+            this.buttonSetSecondAngleDelta.Size = new System.Drawing.Size(78, 28);
+            this.buttonSetSecondAngleDelta.TabIndex = 17;
+            this.buttonSetSecondAngleDelta.Text = "Set angle";
+            this.buttonSetSecondAngleDelta.UseVisualStyleBackColor = true;
+            this.buttonSetSecondAngleDelta.Click += new System.EventHandler(this.ButtonSetSecondAngleDeltaClick);
+            // 
+            // buttonSetRatioOfLength
+            // 
+            this.buttonSetRatioOfLength.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetRatioOfLength.Location = new System.Drawing.Point(171, 69);
+            this.buttonSetRatioOfLength.Name = "buttonSetRatioOfLength";
+            this.buttonSetRatioOfLength.Size = new System.Drawing.Size(79, 28);
+            this.buttonSetRatioOfLength.TabIndex = 18;
+            this.buttonSetRatioOfLength.Text = "Set ratio";
+            this.buttonSetRatioOfLength.UseVisualStyleBackColor = true;
+            this.buttonSetRatioOfLength.Click += new System.EventHandler(this.ButtonSetRatioOfLengthClick);
+            // 
+            // tableLayoutPanelOfCantorSetSettings
+            // 
+            this.tableLayoutPanelOfCantorSetSettings.ColumnCount = 2;
+            this.tableLayoutPanelOfCantorSetSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOfCantorSetSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOfCantorSetSettings.Controls.Add(this.textBoxLayerHeight, 1, 1);
+            this.tableLayoutPanelOfCantorSetSettings.Controls.Add(this.labelIterationDistance, 0, 0);
+            this.tableLayoutPanelOfCantorSetSettings.Controls.Add(this.textBoxIterationDistance, 0, 1);
+            this.tableLayoutPanelOfCantorSetSettings.Controls.Add(this.labelLayerHeight, 1, 0);
+            this.tableLayoutPanelOfCantorSetSettings.Controls.Add(this.buttonSetIterationsDistance, 0, 2);
+            this.tableLayoutPanelOfCantorSetSettings.Controls.Add(this.buttonSetLayerHeight, 1, 2);
+            this.tableLayoutPanelOfCantorSetSettings.Location = new System.Drawing.Point(5, 375);
+            this.tableLayoutPanelOfCantorSetSettings.Name = "tableLayoutPanelOfCantorSetSettings";
+            this.tableLayoutPanelOfCantorSetSettings.RowCount = 3;
+            this.tableLayoutPanelOfCantorSetSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfCantorSetSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfCantorSetSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelOfCantorSetSettings.Size = new System.Drawing.Size(252, 101);
+            this.tableLayoutPanelOfCantorSetSettings.TabIndex = 15;
             // 
             // textBoxLayerHeight
             // 
-            this.textBoxLayerHeight.Location = new System.Drawing.Point(15, 73);
+            this.textBoxLayerHeight.Location = new System.Drawing.Point(129, 36);
             this.textBoxLayerHeight.Name = "textBoxLayerHeight";
-            this.textBoxLayerHeight.Size = new System.Drawing.Size(149, 23);
+            this.textBoxLayerHeight.Size = new System.Drawing.Size(120, 23);
             this.textBoxLayerHeight.TabIndex = 1;
             this.textBoxLayerHeight.Text = "10";
-            this.textBoxLayerHeight.TextChanged += new System.EventHandler(this.TextBoxLayerHeightTextChanged);
+            // 
+            // labelIterationDistance
+            // 
+            this.labelIterationDistance.AutoSize = true;
+            this.labelIterationDistance.Location = new System.Drawing.Point(3, 0);
+            this.labelIterationDistance.Name = "labelIterationDistance";
+            this.labelIterationDistance.Size = new System.Drawing.Size(103, 30);
+            this.labelIterationDistance.TabIndex = 0;
+            this.labelIterationDistance.Text = "Distance between iterations";
+            // 
+            // textBoxIterationDistance
+            // 
+            this.textBoxIterationDistance.Location = new System.Drawing.Point(3, 36);
+            this.textBoxIterationDistance.Name = "textBoxIterationDistance";
+            this.textBoxIterationDistance.Size = new System.Drawing.Size(120, 23);
+            this.textBoxIterationDistance.TabIndex = 1;
+            this.textBoxIterationDistance.Text = "10";
             // 
             // labelLayerHeight
             // 
             this.labelLayerHeight.AutoSize = true;
-            this.labelLayerHeight.Location = new System.Drawing.Point(12, 55);
+            this.labelLayerHeight.Location = new System.Drawing.Point(129, 0);
             this.labelLayerHeight.Name = "labelLayerHeight";
             this.labelLayerHeight.Size = new System.Drawing.Size(72, 15);
             this.labelLayerHeight.TabIndex = 0;
             this.labelLayerHeight.Text = "Layer height";
             // 
-            // textBoxIterationDistance
+            // buttonSetIterationsDistance
             // 
-            this.textBoxIterationDistance.Location = new System.Drawing.Point(14, 26);
-            this.textBoxIterationDistance.Name = "textBoxIterationDistance";
-            this.textBoxIterationDistance.Size = new System.Drawing.Size(149, 23);
-            this.textBoxIterationDistance.TabIndex = 1;
-            this.textBoxIterationDistance.Text = "10";
-            this.textBoxIterationDistance.TextChanged += new System.EventHandler(this.TextBoxIterationDistanceTextChanged);
+            this.buttonSetIterationsDistance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetIterationsDistance.Location = new System.Drawing.Point(3, 69);
+            this.buttonSetIterationsDistance.Name = "buttonSetIterationsDistance";
+            this.buttonSetIterationsDistance.Size = new System.Drawing.Size(120, 29);
+            this.buttonSetIterationsDistance.TabIndex = 2;
+            this.buttonSetIterationsDistance.Text = "Set distance";
+            this.buttonSetIterationsDistance.UseVisualStyleBackColor = true;
+            this.buttonSetIterationsDistance.Click += new System.EventHandler(this.ButtonSetIterationsDistanceClick);
             // 
-            // labelIterationDistance
+            // buttonSetLayerHeight
             // 
-            this.labelIterationDistance.AutoSize = true;
-            this.labelIterationDistance.Location = new System.Drawing.Point(12, 5);
-            this.labelIterationDistance.Name = "labelIterationDistance";
-            this.labelIterationDistance.Size = new System.Drawing.Size(152, 15);
-            this.labelIterationDistance.TabIndex = 0;
-            this.labelIterationDistance.Text = "Distance between iterations";
+            this.buttonSetLayerHeight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetLayerHeight.Location = new System.Drawing.Point(129, 69);
+            this.buttonSetLayerHeight.Name = "buttonSetLayerHeight";
+            this.buttonSetLayerHeight.Size = new System.Drawing.Size(120, 29);
+            this.buttonSetLayerHeight.TabIndex = 3;
+            this.buttonSetLayerHeight.Text = "Set height";
+            this.buttonSetLayerHeight.UseVisualStyleBackColor = true;
+            this.buttonSetLayerHeight.Click += new System.EventHandler(this.ButtonSetLayerHeightClick);
             // 
             // panelOfFractalImage
             // 
@@ -547,8 +614,8 @@
             this.flowLayoutPanelOfButtons.PerformLayout();
             this.tableLayoutPanelOfFractalTreeSettings.ResumeLayout(false);
             this.tableLayoutPanelOfFractalTreeSettings.PerformLayout();
-            this.panelOfCantorSetSettings.ResumeLayout(false);
-            this.panelOfCantorSetSettings.PerformLayout();
+            this.tableLayoutPanelOfCantorSetSettings.ResumeLayout(false);
+            this.tableLayoutPanelOfCantorSetSettings.PerformLayout();
             this.panelOfFractalImage.ResumeLayout(false);
             this.panelOfFractalImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOfFractal)).EndInit();
@@ -588,7 +655,6 @@
         private System.Windows.Forms.Label labelLengthRatio;
         private System.Windows.Forms.TextBox textBoxSecondAngleDelta;
         private System.Windows.Forms.TextBox textBoxLengthRatio;
-        private System.Windows.Forms.Panel panelOfCantorSetSettings;
         private System.Windows.Forms.TextBox textBoxIterationDistance;
         private System.Windows.Forms.Label labelIterationDistance;
         private System.Windows.Forms.Label labelRectangleWidth;
@@ -599,6 +665,12 @@
         private System.Windows.Forms.Button buttonRussianHelp;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button buttonSetFirstAngleDelta;
+        private System.Windows.Forms.Button buttonSetSecondAngleDelta;
+        private System.Windows.Forms.Button buttonSetRatioOfLength;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelOfCantorSetSettings;
+        private System.Windows.Forms.Button buttonSetIterationsDistance;
+        private System.Windows.Forms.Button buttonSetLayerHeight;
     }
 }
 
